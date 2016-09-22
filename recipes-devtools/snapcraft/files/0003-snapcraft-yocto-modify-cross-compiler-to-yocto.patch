@@ -1,0 +1,26 @@
+From 61e75d2736a45a166b01e95a0d7c795a9bffe131 Mon Sep 17 00:00:00 2001
+From: Liming Wang <liming.wang@canonical.com>
+Date: Mon, 12 Sep 2016 15:40:57 +0000
+Subject: [PATCH] snapcraft/yocto: modify cross compiler to yocto
+
+Signed-off-by: Liming Wang <liming.wang@canonical.com>
+---
+ snapcraft/_options.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/snapcraft/_options.py b/snapcraft/_options.py
+index b794ed1..e773e62 100644
+--- a/snapcraft/_options.py
++++ b/snapcraft/_options.py
+@@ -27,7 +27,7 @@ _ARCH_TRANSLATIONS = {
+     'armv7l': {
+         'kernel': 'arm',
+         'deb': 'armhf',
+-        'cross-compiler-prefix': 'arm-linux-gnueabihf-',
++        'cross-compiler-prefix': 'arm-poky-linux-gnueabi-',
+         'cross-build-packages': ['gcc-arm-linux-gnueabihf'],
+         'triplet': 'arm-linux-gnueabihf',
+     },
+-- 
+1.9.1
+

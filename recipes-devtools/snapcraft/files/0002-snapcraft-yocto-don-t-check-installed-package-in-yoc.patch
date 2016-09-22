@@ -1,0 +1,27 @@
+From e0c03b63c55f3e2e7a568673727edd008d65fb17 Mon Sep 17 00:00:00 2001
+From: Liming Wang <liming.wang@canonical.com>
+Date: Sat, 10 Sep 2016 17:24:56 +0000
+Subject: [PATCH 2/2] snapcraft/yocto: don't check installed package in yocto
+
+Signed-off-by: Liming Wang <liming.wang@canonical.com>
+---
+ snapcraft/internal/repo.py | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/snapcraft/internal/repo.py b/snapcraft/internal/repo.py
+index aad8b7c..96890cf 100644
+--- a/snapcraft/internal/repo.py
++++ b/snapcraft/internal/repo.py
+@@ -80,8 +80,7 @@ def install_build_packages(packages):
+     with apt.Cache() as apt_cache:
+         for pkg in unique_packages:
+             try:
+-                if not apt_cache[pkg].installed:
+-                    new_packages.append(pkg)
++                logger.info('check package: %s', pkg)
+             except KeyError as e:
+                 raise EnvironmentError(
+                     "Could not find a required package in "
+-- 
+1.9.1
+
