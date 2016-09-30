@@ -8,7 +8,7 @@ Note: This layer can only work on ubuntu 14.04 and *can't* work on ubuntu 16.04.
 
 # Try it!
 
-1. Download latest yocto release
+- Download latest yocto release
 
 ```
  $ git clone git://git.yoctoproject.org/poky
@@ -17,20 +17,20 @@ Note: This layer can only work on ubuntu 14.04 and *can't* work on ubuntu 16.04.
  $ git cherry-pick 8b21a516b0824aa6b47fa21287b160edfa232d96
 ```
 
-1. Fetch necessary layers
+- Fetch necessary layers
 
 ```
  $ git clone git://git.openembedded.org/meta-openembedded
  $ git clone git://github.com/walimis/meta-snappy-tools.git
 ```
 
-1. Prepare the build environment
+- Prepare the build environment
 
 ```
  $ source oe-init-build-env
 ```
 
-1. Add meta-snappy-tools to your conf/bblayers.conf so that it looks similar to this
+- Add meta-snappy-tools to your conf/bblayers.conf so that it looks similar to this
 
 ```
  BBLAYERS ?= " \
@@ -41,13 +41,13 @@ Note: This layer can only work on ubuntu 14.04 and *can't* work on ubuntu 16.04.
         "
 ```
 
-1. Build snapcraft
+- Build snapcraft
 
 ```
  $ bitbake snapcraft
 ```
 
-1. Prepare snapcraft
+- Prepare snapcraft
 
 Before using snapcraft, we need first run "snapcraft login".
 
